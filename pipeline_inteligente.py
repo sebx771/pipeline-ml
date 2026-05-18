@@ -138,7 +138,7 @@ def validar_calidad_expansion(df_orig, df_exp):
 def preparar_datos_ml(df):
     """Separa features (X) de target (y), y aplica división de sets y scaling."""
     # Descartar columnas no numéricas o identificadores no predictivos
-    columnas_validas = df.select_dtypes(include=[np.number,np.bool])
+    columnas_validas = df.select_dtypes(include=[np.number,bool])
     
     X = columnas_validas.drop(columns=['precio', 'id'], errors='ignore')
     y = columnas_validas['precio']
