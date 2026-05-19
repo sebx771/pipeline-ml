@@ -207,14 +207,14 @@ Al ejecutar el módulo como script (`if __name__ == "__main__":`), se lanza `pip
 flowchart TD
     A[Inicio] --> B{Cargar CSV}
     B -->|Éxito| C[Validar estructura]
-    B -->|Error (E001)| Z[Terminar]
+    B -->|Error E001| Z[Terminar]
     C -->|OK| D[Limpiar datos]
     D --> E[Crear variables temporales]
-    E --> F[Train/Test split (80/20)]
-    F --> G[Expandir train (bootstrap)]
+    E --> F[Train/Test split 80/20]
+    F --> G[Expandir train bootstrap]
     G --> H[Detectar outliers]
-    G --> I[Validar expansión (media)]
-    H --> J[Codificar (one‑hot)]
+    G --> I[Validar expansion media]
+    H --> J[Codificar one-hot]
     I --> J
     J --> K[Separar X e y]
     K --> L[Imputar + Escalar]
@@ -223,7 +223,7 @@ flowchart TD
     M --> O[Random Forest]
     N --> P[Evaluar LR]
     O --> Q[Evaluar RF]
-    P --> R[Cross‑validation LR]
+    P --> R[Cross-validation LR]
     Q --> S[Generar gráficos]
     R --> S
     S --> T[Exportar dataset expandido]
