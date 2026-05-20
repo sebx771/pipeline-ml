@@ -223,18 +223,6 @@ def generar_graficos(df, y_test, y_pred):
     plt.savefig("graficos/distribucion.png")
     plt.close()
 
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(
-        df.select_dtypes(include=np.number).corr(),
-        annot=True,
-        cmap="coolwarm",
-        fmt=".2f",
-    )
-    plt.title("Correlaciones")
-    plt.tight_layout()
-    plt.savefig("graficos/correlaciones.png")
-    plt.close()
-
     plt.figure(figsize=(6, 4))
     plt.scatter(y_test, y_pred, alpha=0.7)
     plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], "r--")
